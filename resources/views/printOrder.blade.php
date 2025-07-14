@@ -96,6 +96,12 @@
             width: 30%;
         }
 
+        /* เพิ่ม CSS สำหรับชื่อเมนูให้ใหญ่ขึ้น */
+        .menu-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
         .total {
             text-align: right;
             font-weight: bold;
@@ -141,9 +147,9 @@
                     @foreach($order as $rs)
                     <tr>
                         <td>
-                            <div>{{ $rs['menu']->name }}</div>
+                            <div class="menu-name">{{ $rs['menu']->name }}</div>
                             @foreach($rs['option'] as $option)
-                            <div style="font-size: 12px; color: #6b7280;">+ {{$option['option']->type}}</div>
+                            <div style="font-size: 20px; color: #6b7280; font-weight: bold;">+ {{$option['option']->type}}</div>
                             @endforeach
                         </td>
                         <td><?= $rs->quantity ?></td>
